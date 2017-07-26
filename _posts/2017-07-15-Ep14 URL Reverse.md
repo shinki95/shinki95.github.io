@@ -12,7 +12,7 @@ Url 패턴이 변경되어도 거기서 호출되는 함수는 변하지 않는�
 
 ```python
 #urls.py
-url pattenrs =[
+urlpattenrs =[
 url(r'^(?P<id>\d+)/$', views.post_detail, name='post_detail'),
 ]
 #post_detail.html
