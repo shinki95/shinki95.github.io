@@ -15,10 +15,6 @@ Url 패턴이 변경되어도 거기서 호출되는 함수는 변하지 않는�
 url(r'^(?P<id>\d+)/$', views.post_detail, name='post_detail'),
 
 #post_detail.html
-<<<<<<< HEAD
-=======
-# <a href="{% url "post_detail" post.id %}">
->>>>>>> refs/remotes/origin/gh-pages
 ```
 
 ## <a href="{% url "post_detail" post.id %}">
