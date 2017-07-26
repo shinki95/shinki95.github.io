@@ -8,7 +8,7 @@ header-img: "img/post-bg-02.jpg"
 
 # CRUD
 
-##R
+## R
 1. queryset은 받아서 queryset을 돌려준다(chainig 가능>filter에 and쓰는 것과 동일)
 
 2. queryset에서 제목을 보이게 하고 싶으면 
@@ -47,12 +47,12 @@ queryset.get은 해당되는 데이터가 1개이기를 기대
 qs.first()
 qs.last()는 doesnotexist예외가 아니라 None을 반환
 
-##C
+## C
 Create를 하는 방법
 1. modeinstance를 생성해서 생성자에 필요한 속성 다 넘겨주고 save
 2. ModelManager의 create
 
-##U
+## U
 Update를 하는 방법
 1. 모델 인스턴스를 fetch한 뒤, 필요한 속성하고 모델instance의 save를 통해 저장!
 
@@ -65,13 +65,12 @@ queryset = Post.objects.all()
 queryset.update(tags="Python, Django")
 ```
 
-##
+## D 
 Delete를 하는 방법
 1. 모델 인스턴스를 불러와서 delete를 함
 2. queryset의 delete함수를 활용
 
-##
-Debug toolbar 설치
+## Debug toolbar 설치
 1. pip install로 설치 후
 2. installed app에 등록
 3. middleware에 등록하고
@@ -81,11 +80,12 @@ internal ips 만들어서 setting에 작성
 5. template에 body태그가 없으면 debug toolbar가 보이지않는다!
 
 
-**TIP! requirements.txt 만들어서 library목록 저장해놓으면 나중에
-```requirements.txt
+**TIP! requirements.txt 만들어서 library목록 저장해놓으면 나중에**
+```
+/requirements.txt
 django==1.10.5
 django-debug-toolbar
 django-extensions
 ipython[notebook]
-
-`pip install -r requirements.txt`로 한번에 개발환경 설치 가능**
+```
+**`pip install -r requirements.txt`로 한번에 개발환경 설치 가능**

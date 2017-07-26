@@ -6,7 +6,8 @@ author:     "신윤기"
 header-img: "img/post-bg-02.jpg"
 ---
 
-# "Http Status Code #
+# Http Status Code
+
 
 
 지정 record가 없는 경우 500오류가 되어서는 안 된다!
