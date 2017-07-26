@@ -8,7 +8,7 @@ header-img: "img/post-bg-02.jpg"
 
 # "Django Template" #
 템플릿 상속을 위해서는 자식 템플릿 코드의 최상단에 반드시 이 코드를 작성할 것 
-```python
+```
 {% extends "부모템플릿경로" %}
 ```
 
