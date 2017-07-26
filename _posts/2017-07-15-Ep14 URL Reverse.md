@@ -12,8 +12,9 @@ Url 패턴이 변경되어도 거기서 호출되는 함수는 변하지 않는�
 
 ```python
 #urls.py
+url pattenrs =[
 url(r'^(?P<id>\d+)/$', views.post_detail, name='post_detail'),
-
+]
 #post_detail.html
 ```
 
@@ -71,7 +72,9 @@ urlpatterns = [
 이러면 http 302응답이 와서 post_list로 연결이 된다!
 
 혹은 
-`url(r'^$', lambda r: redirect('blog:post_list), name='root'),`
+```python
+urlpatterns = [url(r'^$', lambda r: redirect('blog:post_list), name='root'),]
+```
 와 같이 쓸 수도 있다.
 
 *(따로 view함수를 구현할 필요없이 redirect함수만 만드는 것이므로)*
