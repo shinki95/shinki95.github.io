@@ -15,8 +15,9 @@ Url 패턴이 변경되어도 거기서 호출되는 함수는 변하지 않는�
 url(r'^(?P<id>\d+)/$', views.post_detail, name='post_detail'),
 
 #post_detail.html
-<a href="{% url "post_detail" post.id %}">
 ```
+
+## <a href="{% url "post_detail" post.id %}">
 name을 지정하면 그 뷰함수를 만드는 url로 연결시키고 id를 인자로 받으니 post.id를 넘겨준다.
 
 
