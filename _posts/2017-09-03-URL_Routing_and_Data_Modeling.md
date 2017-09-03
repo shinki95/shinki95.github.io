@@ -8,8 +8,6 @@ header-img: "img/post-bg-02.jpg"
 # Django 모델링 기초
  첫 모임에 앞서 DB scheme, url routing을 공부해오기로 했다.
 
-본인은 첫 모임인 9월 3일을 앞두고 8월 31일 부터 9월 2일 까지 여행을 다녀오는 바람에 틈틈히 짬을 내 공부를 해야했고 따라서 마크다운 노트 대신 동기화가 상대적으로 편한 onenote에 이동 중 공부한 내용을 적기로 했다.
-
 
 첫 번째 참고한 레퍼런스는 http://blog.hannal.com/2008/6/04_2-python_django_lecture/
 였다.
