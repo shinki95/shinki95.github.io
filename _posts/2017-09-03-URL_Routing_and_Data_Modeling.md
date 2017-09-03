@@ -44,17 +44,45 @@ class Entries(models.Model):
 Tags의 경우에는 하나의 글이 여러 개의 Tags에 속해 있을 수 있고 하나의 Tags에 여러개의 글이 속하게 된다. 이는 **MANY TO MANY** 관계를 뜻한다. 이를 Django에서는 **ManyToManyField**로 정의한다.  
  이러한 ManyToMany의 관계의 경우 서로 연결 되는 두 필드들의 관계를 나타내는 새로운 테이블을 따로 관리한다.  
 
-# 쇼핑몰 모델 구축하기
+# 쇼핑몰 모델 구축하기 
 위에서 살펴본 내용을 바탕으로 우리가 만들 쇼핑몰에 들어가야하는 모델을 생각해보자  
-다음 레퍼런서를 참고했다
-*Setting up a Complete Django E-commerce store in 30 minutes*
+다음 레퍼런스를 참고했다  
+*Setting up a Complete Django E-commerce store in 30 minutes*  
+*Django by Example : Creating an Online Shop Project | packtpub.com*
 
 1. Product Catalog
-```Python
-class Catalog(models.Model)
-name = models.Charfiled(max_length=255)
-slug = models.SlugField(max_length=150)
-publisher = models.CharField(max_length=300)
-description = models.TextField()
-pub_date = models.DateTimeFIeld(defqul=datetime.now)
+```python
+
+class Category(models.Model):
+    name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200)
+
+    class Meta:
+        ordering = ('name')
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
+
+    def __str__(self):
+        return self.name 
+
+class Product(models.Model):
+    category = models.ForeignKey(Category, related_name='products')
+    name = models.Charfiled(max_length=255)
+    slug = models.SlugField(max_length=150)
+    image = models.ImageField(uplaod_to='products/%Y/%m/%d', blank=True)
+    decription = models.TextField(blank=True)
+    stock = models.PositiveIntegerField()
+    description = models.TextField()
+    available = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('-created',)
 ```
+
+
+
+
+  *slug란 무엇인가?*
+
